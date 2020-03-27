@@ -16,6 +16,6 @@ class Client:
 
     @staticmethod
     def schema():
-        return ['name', 'company', 'position', 'uid']
+        return ['name', 'company', 'email', 'position', 'uid']
         
 

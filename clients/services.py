@@ -9,5 +9,5 @@ class ClientService:
 
     def create_client(self, client):
         with open(self.table_name, mode='a') as f:
-            writer = csv.DictWiriter(f, fieldnames=Client.schema())
+            writer = csv.DictWriter(f, fieldnames=Client.schema())
             writer.writerow(client.to_dict())
