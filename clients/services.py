@@ -1,4 +1,4 @@
-import CSV
+import csv
 
 from clients.models import Client
 

@@ -1,4 +1,4 @@
-
+import uuid
 
 class Client:
 
