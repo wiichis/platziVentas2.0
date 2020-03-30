@@ -40,3 +40,8 @@ class ClientService:
 
         os.remove(self.table_name)
         os.rename(tmp_table_name, self.table_name)
+
+    def delete_client(self, client_uid):
+        tmp_clients = [client for client in self.list_clients() if 
+        client['uid'] != client_uid]
+        self._save_to_disk(tmp_clients)
