@@ -2,3 +2,4 @@ __pycache__/
 clients/__pycache__/
 pv.egg-info/
 venv/
+.clients.csv
