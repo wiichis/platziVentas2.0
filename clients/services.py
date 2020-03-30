@@ -20,8 +20,8 @@ class ClientService:
 
             return list(reader)
 
-    def update_client(self, update_client):
-        client = self.list_clients()
+    def update_client(self, updated_client):
+        clients = self.list_clients()
 
         updated_clients = []
         for client in clients:
@@ -32,9 +32,9 @@ class ClientService:
 
         self._save_to_disk(updated_clients)
 
-    def _save_to_disk(clients):
+    def _save_to_disk(self, clients):
         tmp_table_name = self.table_name + '.tmp'
-        with open(tmp_table_name) as f:
+        with open(tmp_table_name, mode='w') as f:
             writer = csv.DictWriter(f, fieldnames=Client.schema())
             writer.writerows(clients)
 
